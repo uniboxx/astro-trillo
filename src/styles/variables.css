@@ -1,0 +1,22 @@
+:root {
+  /* COLORS */
+  --color-primary: #eb2f64;
+  --color-primary-light: #ff3366;
+  --color-primary-dark: #ba265d;
+
+  --color-white: lch(100% 0.01 296.81);
+  --color-gray-light-1: #faf9f9;
+  --color-gray-light-2: #f4f2f2;
+  --color-gray-light-3: #f0eeee;
+  --color-gray-light-4: #ccc;
+
+  --color-gray-dark-1: #333;
+  --color-gray-dark-2: #777;
+  --color-gray-dark-3: #999;
+
+  --shadow-dark: 0 1rem 3rem lch(0% 0 0 / 0.3);
+  --shadow-light: 0 1rem 2.5rem lch(0% 0 0 / 0.06);
+
+  /* TYPOGRAPHY */
+  --font-family: 'Open Sans';
+}

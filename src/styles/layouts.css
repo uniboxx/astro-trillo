@@ -1,0 +1,136 @@
+#container {
+  margin: 4rem auto;
+  box-shadow: var(--shadow-dark);
+  background-color: var(--color-gray-light-2);
+  max-width: 60rem;
+}
+
+/* ******************HEADER************************** */
+header {
+  display: flex;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--color-gray-light-2);
+  background-color: var(--color-white);
+  padding: 1rem 0;
+  min-height: 3.5rem;
+  font-size: 0.7rem;
+
+  .logo {
+    margin-left: 1rem;
+  }
+
+  nav.user-nav {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    & > * {
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      height: 100%;
+      &:hover {
+        background-color: var(--color-gray-light-2);
+      }
+    }
+    .icon-box {
+      position: relative;
+      svg {
+        display: inline-block;
+        width: 1.125rem;
+        height: 1.125rem;
+        fill: var(--color-gray-dark-2);
+      }
+      span {
+        display: flex;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.55rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        width: 0.875rem;
+        height: 0.875rem;
+        color: var(--color-white);
+        font-size: 0.4rem;
+      }
+    }
+    .user .user-photo {
+      display: inline-block;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+    }
+  }
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    input {
+      transition: 0.3s;
+      margin-right: -1.75rem;
+      margin-left: -0.75rem;
+      border-radius: 100px;
+      background-color: var(--color-gray-light-2);
+      padding: 0.35rem 1rem;
+      width: 90%;
+
+      &::placeholder {
+        color: var(--color-gray-light-4);
+        font-weight: 300;
+      }
+      &:focus {
+        outline: none;
+        background-color: var(--color-gray-light-3);
+        width: 100%;
+      }
+    }
+    input:focus + button {
+      background-color: var(--color-gray-light-3);
+    }
+
+    button {
+      cursor: pointer;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+        fill: var(--color-gray-dark-3);
+      }
+    }
+  }
+  @media screen and (min-width: 40rem) {
+    padding: unset;
+    form {
+      order: 1;
+      width: 40%;
+      input {
+        margin-left: unset;
+      }
+    }
+    nav.user-nav {
+      order: 2;
+    }
+  }
+}
+
+#content {
+  nav {
+    flex: 0 0 10%;
+    background-color: var(--color-gray-dark-1);
+  }
+
+  main {
+    flex: 1;
+    background-color: var(--color-white);
+  }
+
+  @media screen and (min-width: 40rem) {
+    display: flex;
+  }
+}

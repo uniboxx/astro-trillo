@@ -1,16 +1,45 @@
 ---
-
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import logo from '@/assets/images/logo.png';
+import user from '@/assets/images/user.jpg';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Trillo | Your all-in-one booking app">
+  <div id="container">
+    <header>
+      <div class="logo">
+        <Image src={logo} alt="Logo" height="32.5" />
+      </div>
+      <nav class="user-nav">
+        <div class="icon-box">
+          <svg><use xlink:href="/icons/sprite.svg#icon-bookmark"></use></svg>
+          <span class="notification">7</span>
+        </div>
+        <div class="icon-box">
+          <svg><use xlink:href="/icons/sprite.svg#icon-chat"></use></svg>
+          <span class="notification">13</span>
+        </div>
+        <div class="user">
+          <Image class="user-photo" src={user} alt="User photo" height="37.5" />
+          <span class="user-name">Jonas</span>
+        </div>
+      </nav>
+      <form action="#">
+        <input type="text" placeholder="Search hotels" />
+        <button
+          ><svg class="icon-search"
+            ><use xlink:href="/icons/sprite.svg#icon-magnifying-glass"
+            ></use></svg
+          ></button
+        >
+      </form>
+    </header>
+    <div id="content">
+      <nav>Navigation</nav>
+      <main>Main content</main>
+    </div>
+  </div>
+</BaseLayout>
+
+<style></style>
