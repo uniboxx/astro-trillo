@@ -47,8 +47,8 @@ header {
       span {
         display: flex;
         position: absolute;
-        top: 0.75rem;
-        right: 0.55rem;
+        top: 0.25rem;
+        right: 0.45rem;
         justify-content: center;
         align-items: center;
         border-radius: 50%;
@@ -115,6 +115,12 @@ header {
     }
     nav.user-nav {
       order: 2;
+      .icon-box {
+        span {
+          top: 0.75rem;
+          right: 0.55rem;
+        }
+      }
     }
   }
 }
