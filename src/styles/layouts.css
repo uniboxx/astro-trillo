@@ -47,7 +47,7 @@ header {
       span {
         display: flex;
         position: absolute;
-        top: 0.25rem;
+        top: 0;
         right: 0.45rem;
         justify-content: center;
         align-items: center;
