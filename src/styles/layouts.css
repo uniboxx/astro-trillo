@@ -4,9 +4,6 @@
   background-color: var(--color-gray-light-2);
   max-width: 60rem;
 }
-svg {
-  display: inline-block;
-}
 
 /* ******************HEADER************************** */
 header {
@@ -16,6 +13,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--color-gray-light-2);
+  border-bottom: 1px solid var(--color-gray-light-2);
   background-color: var(--color-white);
   padding: 1rem 0;
   min-height: 3.5rem;
@@ -63,7 +61,6 @@ header {
       }
     }
     .user .user-photo {
-      display: inline-block;
       margin-right: 0.5rem;
       border-radius: 50%;
     }
@@ -172,8 +169,78 @@ header {
   }
 
   main {
+    display: flex;
     flex: 1;
+    flex-direction: column;
     background-color: var(--color-white);
+    .hotels-images {
+      .image {
+        width: 100%;
+      }
+    }
+    .overview {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      order: -1;
+      gap: 0 1rem;
+      border-bottom: 1px solid var(--color-gray-light-2);
+
+      .left,
+      .right {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .left {
+        h1 {
+          padding: 0.75rem 1.5rem;
+          font-weight: 300;
+          font-size: 1.125rem;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .stars {
+          display: flex;
+        }
+      }
+      .right {
+        gap: 1.5rem;
+      }
+
+      svg {
+        width: 0.875rem;
+        height: 0.875rem;
+        fill: var(--color-primary);
+      }
+
+      .location {
+        display: flex;
+        align-items: center;
+
+        gap: 0.25rem;
+        color: var(--color-primary);
+        font-size: 0.6rem;
+      }
+      .rating {
+        align-self: stretch;
+        background-color: var(--color-primary);
+        padding: 0 1.125rem;
+        color: var(--color-white);
+        text-align: center;
+        .average {
+          font-weight: 300;
+          font-size: 1.125rem;
+        }
+        .count {
+          margin-top: -3px;
+          font-size: 0.4rem;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 40rem) {
@@ -228,6 +295,24 @@ header {
         color: var(--color-gray-light-4);
         font-size: 0.6rem;
         text-align: center;
+      }
+    }
+
+    main {
+      .hotels-images {
+        display: flex;
+      }
+      .overview {
+        order: 0;
+
+        .left,
+        .right {
+          width: max-content;
+        }
+
+        @media screen and (min-width: 55rem) {
+          justify-content: space-between;
+        }
       }
     }
   }

@@ -3,6 +3,13 @@ import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import logo from '@/assets/images/logo.png';
 import user from '@/assets/images/user.jpg';
+import ButtonLink from '@/components/ButtonLink.astro';
+
+const hotels = import.meta.glob<{ default: ImageMetadata }>(
+  '@/assets/images/hotels/*.jpg'
+);
+const hotelsFuncs = Object.values(hotels);
+const hotelsImages = hotelsFuncs.map((hotelFunc) => hotelFunc());
 ---
 
 <BaseLayout title="Trillo | Your all-in-one booking app">
@@ -75,7 +82,45 @@ import user from '@/assets/images/user.jpg';
       </nav>
 
       <!-- MAIN -->
-      <main>Main content</main>
+      <main>
+        <div class="hotels-images">
+          {
+            hotelsImages.map((hotel, i) => (
+              <Image class="image" src={hotel} alt={`hotel-${i + 1}`} />
+            ))
+          }
+        </div>
+
+        <div class="overview">
+          <div class="left">
+            <h1>Hotel Las Palmas</h1>
+            <div class="stars">
+              {
+                Array.from(new Array(5)).map((star) => (
+                  <svg class="star">
+                    <use xlink:href="/icons/sprite.svg#icon-star" />
+                  </svg>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="location">
+              <svg
+                ><use xlink:href="/icons/sprite.svg#icon-location-pin"
+                ></use></svg
+              >
+              <ButtonLink href="#">Albufeira, Portugal</ButtonLink>
+            </div>
+
+            <div class="rating">
+              <div class="average">8.6</div>
+              <div class="count">429 votes</div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   </div>
 </BaseLayout>

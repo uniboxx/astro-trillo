@@ -1,0 +1,44 @@
+---
+const { ...props } = Astro.props;
+---
+
+<button {...props}>
+  <slot />
+</button>
+
+<style>
+  button {
+    border-bottom: 1px solid currentColor;
+    color: var(--color-primary);
+    font-size: inherit;
+    paddind-bottom: 2px;
+    display: inline-block;
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: transparent;
+
+    &:hover {
+      color: var(--color-gray-dark-1);
+    }
+
+    &:focus {
+      animation: pulsate 1s infinite;
+      outline: none;
+    }
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      box-shadow: none;
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-dark-small);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: none;
+    }
+  }
+</style>
