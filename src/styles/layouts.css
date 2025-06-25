@@ -148,8 +148,9 @@ header {
           display: flex;
           align-items: center;
           gap: 0.5rem;
+          transition: 0.2s;
           cursor: pointer;
-          padding: 0.5rem 0;
+          padding: 0.5rem;
           color: inherit;
           svg {
             width: 0.875rem;
@@ -158,6 +159,9 @@ header {
           }
           span {
             text-transform: uppercase;
+          }
+          &:active {
+            background-color: var(--color-primary-light);
           }
         }
       }
@@ -204,6 +208,9 @@ header {
             position: relative;
             z-index: 10;
             padding: 0.75rem 1.5rem;
+            &:active {
+              background-color: transparent;
+            }
           }
           &:hover::before,
           &.active::before {
