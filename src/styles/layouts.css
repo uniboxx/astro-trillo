@@ -181,7 +181,7 @@ header {
     .overview {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
       order: -1;
       gap: 0 1rem;
       border-bottom: 1px solid var(--color-gray-light-2);
@@ -190,13 +190,12 @@ header {
       .right {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
-        width: 100%;
       }
       .left {
         h1 {
-          padding: 0.75rem 1.5rem;
+          padding: 0.75rem 0.5rem;
           font-weight: 300;
           font-size: 1.125rem;
           letter-spacing: 1px;
@@ -207,7 +206,9 @@ header {
         }
       }
       .right {
+        justify-content: end;
         gap: 1.5rem;
+        margin-left: auto;
       }
 
       svg {
@@ -304,14 +305,10 @@ header {
       }
       .overview {
         order: 0;
-
-        .left,
-        .right {
-          width: max-content;
-        }
-
-        @media screen and (min-width: 55rem) {
-          justify-content: space-between;
+        .left{
+          h1{
+             padding: 0.75rem 1.5rem;
+          }
         }
       }
     }
