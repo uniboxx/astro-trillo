@@ -4,6 +4,9 @@
   background-color: var(--color-gray-light-2);
   max-width: 60rem;
 }
+svg {
+  display: inline-block;
+}
 
 /* ******************HEADER************************** */
 header {
@@ -127,8 +130,41 @@ header {
 
 #content {
   nav {
-    flex: 0 0 10%;
     background-color: var(--color-gray-dark-1);
+    padding: 0.5rem 0;
+    font-size: 0.7rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 2rem;
+
+      li {
+        position: relative;
+        color: var(--color-gray-light-1);
+
+        a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+          padding: 0.5rem 0;
+          color: inherit;
+          svg {
+            width: 0.875rem;
+            height: 0.875rem;
+            fill: currentColor;
+          }
+          span {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    .legal {
+      display: none;
+    }
   }
 
   main {
@@ -138,5 +174,54 @@ header {
 
   @media screen and (min-width: 40rem) {
     display: flex;
+
+    nav {
+      display: flex;
+      row-gap: 10rem;
+      flex: 0 0 20%;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+
+      ul {
+        flex-direction: column;
+        gap: 0.25rem;
+        margin-top: 1.75rem;
+        li {
+          &::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleY(0);
+            transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+              background-color 0.2s;
+            background: var(--color-primary);
+            width: 3px;
+            height: 100%;
+            content: '';
+          }
+          a {
+            position: relative;
+            z-index: 10;
+            padding: 0.75rem 1.5rem;
+          }
+          &:hover::before,
+          &.active::before {
+            transform: scaleY(1);
+            width: 100%;
+          }
+          &:active::before {
+            background-color: var(--color-primary-light);
+          }
+        }
+      }
+      .legal {
+        display: block;
+        padding: 1.25rem;
+        color: var(--color-gray-light-4);
+        font-size: 0.6rem;
+        text-align: center;
+      }
+    }
   }
 }

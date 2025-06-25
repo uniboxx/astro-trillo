@@ -9,7 +9,7 @@ import user from '@/assets/images/user.jpg';
   <div id="container">
     <header>
       <div class="logo">
-        <Image src={logo} alt="Logo" height="32.5" />
+        <Image src={logo} alt="Logo" height="32.5" loading="eager" />
       </div>
       <nav class="user-nav">
         <div class="icon-box">
@@ -35,8 +35,46 @@ import user from '@/assets/images/user.jpg';
         >
       </form>
     </header>
+
+    <!-- CONTENT -->
     <div id="content">
-      <nav>Navigation</nav>
+      <!-- SIDEBAR -->
+      <nav>
+        <ul>
+          <li class="active">
+            <a href="#">
+              <svg><use xlink:href="/icons/sprite.svg#icon-home"></use></svg>
+              <span>Hotels</span></a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <svg
+                ><use xlink:href="/icons/sprite.svg#icon-aircraft-take-off"
+                ></use></svg
+              >
+              <span>Flight</span></a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <svg><use xlink:href="/icons/sprite.svg#icon-key"></use></svg>
+              <span>Car rental</span></a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <svg><use xlink:href="/icons/sprite.svg#icon-map"></use></svg>
+              <span>Tours</span></a
+            >
+          </li>
+        </ul>
+        <div class="legal">
+          &copy; {new Date().getFullYear()} by Trillo. All rights reserved.
+        </div>
+      </nav>
+
+      <!-- MAIN -->
       <main>Main content</main>
     </div>
   </div>
