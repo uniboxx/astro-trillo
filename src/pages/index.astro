@@ -8,8 +8,13 @@ import ButtonLink from '@/components/ButtonLink.astro';
 const hotels = import.meta.glob<{ default: ImageMetadata }>(
   '@/assets/images/hotels/*.jpg'
 );
+const friends = import.meta.glob<{ default: ImageMetadata }>(
+  '@/assets/images/friends/*.jpg'
+);
 const hotelsFuncs = Object.values(hotels);
 const hotelsImages = hotelsFuncs.map((hotelFunc) => hotelFunc());
+const friendsFuncs = Object.values(friends);
+const friendsImages = friendsFuncs.map((friendFunc) => friendFunc());
 ---
 
 <BaseLayout title="Trillo | Your all-in-one booking app">
@@ -120,9 +125,43 @@ const hotelsImages = hotelsFuncs.map((hotelFunc) => hotelFunc());
             </div>
           </div>
         </div>
+
+        <div class="detail">
+          <div class="description">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+              nisi dignissimos debitis ratione sapiente saepe. Accusantium
+              cumque, quas, ut corporis incidunt deserunt quae architecto
+              voluptate.
+            </p>
+            <p>
+              Accusantium cumque, quas, ut corporis incidunt deserunt quae
+              architecto voluptate delectus, inventore iure aliquid aliquam.
+            </p>
+            <ul class="list">
+              <li>Close to the beach</li>
+              <li>Breakfast included</li>
+              <li>Free airport shuttle</li>
+              <li>Free wifi in all rooms</li>
+              <li>Air conditioning and heating</li>
+              <li>Pets allowed</li>
+              <li>We speak all languages</li>
+              <li>Perfect for families</li>
+            </ul>
+            <div class="recommend">
+              <p>Lucy and 3 other friends recommend this hotel</p>
+              <div class="friends">
+                {
+                  friendsImages.map((friendImage, i) => (
+                    <Image src={friendImage} alt={`friend-${i + 1}`} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+          <div class="reviews">reviews</div>
+        </div>
       </main>
     </div>
   </div>
 </BaseLayout>
-
-<style></style>

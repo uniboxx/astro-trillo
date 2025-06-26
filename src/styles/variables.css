@@ -14,10 +14,14 @@
   --color-gray-dark-2: #777;
   --color-gray-dark-3: #999;
 
-  --shadow-dark: 0 1rem 3rem lch(0% 0 0 / 0.3);
   --shadow-dark-small: 0 0.5rem 2rem lch(0% 0 0 / 0.25);
+  --shadow-dark-medium: 0 1rem 2.5rem lch(0% 0 0 / 0.06);
+  --shadow-dark: 0 1rem 3rem lch(0% 0 0 / 0.3);
   --shadow-light: 0 1rem 2.5rem lch(0% 0 0 / 0.06);
 
   /* TYPOGRAPHY */
   --font-family: 'Open Sans';
+
+  /* OTHER */
+  --line: 1px solid var(--color-gray-light-2);
 }
