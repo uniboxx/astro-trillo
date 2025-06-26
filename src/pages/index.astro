@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import logo from '@/assets/images/logo.png';
 import user from '@/assets/images/user.jpg';
 import ButtonLink from '@/components/ButtonLink.astro';
+import Review from '@/components/Review.astro';
 
 const hotels = import.meta.glob<{ default: ImageMetadata }>(
   '@/assets/images/hotels/*.jpg'
@@ -159,7 +160,12 @@ const friendsImages = friendsFuncs.map((friendFunc) => friendFunc());
               </div>
             </div>
           </div>
-          <div class="reviews">reviews</div>
+          <div class="reviews">
+            <Review id="1" />
+            <Review id="2" />
+            <ButtonLink class="btn-see-all" href="#">Show all &rarr;</ButtonLink
+            >
+          </div>
         </div>
       </main>
     </div>

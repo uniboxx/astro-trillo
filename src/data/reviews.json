@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Nick Smith",
+    "comment": "Great service! Highly recommended. Will definitely use again. Thank you!",
+    "rating": 7.8,
+    "date": "2023-06-01"
+  },
+  {
+    "id": 2,
+    "name": "Mary Thomas",
+    "comment": "I was very impressed with the quality of the product. It exceeded my expectations.",
+    "rating": 9.3,
+    "date": "2023-06-02"
+  }
+]
